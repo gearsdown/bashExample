@@ -2,7 +2,7 @@
 counter=1
 max=25
 varName="abc"
-vala=$(find | grep "abc" | sed -E 's/.\/abc//g' | sort -nr | head -1)
+vala=$(find | grep "$varName" | sed -E "s/.\/$varName//g" | sort -nr | head -1)
 counter=$(($counter + $vala))
 max=$(($max + $vala))
 while [ $counter -le $max ]
